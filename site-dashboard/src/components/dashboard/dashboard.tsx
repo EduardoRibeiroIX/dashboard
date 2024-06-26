@@ -3,12 +3,6 @@ import React from 'react';
 import { CampaignStatistics } from '../campaignStatistics/CampaignStatistics';
 import { CampaignSuccessRate } from '../campaignSuccessRate/CampaignSuccessRate';
 
-interface DataPoint {
-  name: string;
-  uv: number;
-  fill: string;
-}
-
 const Dashboard: React.FC = () => {
   return (
     <section className='dashboard'>
