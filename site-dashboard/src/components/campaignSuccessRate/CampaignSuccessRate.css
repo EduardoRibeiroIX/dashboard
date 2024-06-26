@@ -1,0 +1,20 @@
+
+.conteudo {
+    padding: 100px 0;
+    background-color: #fefefe;
+    box-shadow: 1px 1px 20px 1px rgb(125, 125, 125, 0.2);
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+}
+.line .graph {
+    width: 80vw;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}

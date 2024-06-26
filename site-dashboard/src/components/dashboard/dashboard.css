@@ -1,0 +1,12 @@
+.dashboard h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    background: radial-gradient(circle, #10ffeb, #5b0bf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 50px 0;
+    /* color: transparent; Use color instead of text-fill-color */
+
+}

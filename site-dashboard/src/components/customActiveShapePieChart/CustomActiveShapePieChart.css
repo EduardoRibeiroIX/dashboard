@@ -1,0 +1,11 @@
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grafico {
+    background-color: red;
+}
+
+  
