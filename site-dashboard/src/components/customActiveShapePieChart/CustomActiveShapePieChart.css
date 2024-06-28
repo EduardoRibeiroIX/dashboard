@@ -1,11 +1,12 @@
-.area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* CustomActiveShapePieChart.css */
+.pie-chart-container {
+    width: 100%;
+    height: 600px;
+    /* Certifique-se de que o contêiner pai tenha uma altura definida */
 }
 
-.grafico {
-    background-color: red;
+.central-label {
+    font-weight: 600;
+    font-size: 2rem;
+    text-anchor: middle;
 }
-
-  

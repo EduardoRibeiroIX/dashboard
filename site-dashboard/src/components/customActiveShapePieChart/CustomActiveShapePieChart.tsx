@@ -1,6 +1,6 @@
 import React from 'react';
-import { PieChart, Pie, Sector, Tooltip, Legend, Cell } from 'recharts';
-import './CustomActiveShapePieChart.css'
+import { PieChart, Pie, Sector, Tooltip, Legend, Cell, ResponsiveContainer } from 'recharts';
+import './CustomActiveShapePieChart.css';
 
 interface CustomActiveShapePieChartProps {
   data: { name: string; value: number; fill: string }[];
@@ -43,11 +43,11 @@ const renderActiveShape = (props: any) => {
         outerRadius={outerRadius + 10}
         fill={fill}
       />
-      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
-      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
+      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+      <text fontSize={14} x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
+      <text fontSize={14} x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+        {`(Rate ${(percent * 100).toFixed(1)}%)`}
       </text>
     </g>
   );
@@ -61,26 +61,30 @@ export const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps>
   };
 
   return (
-    <PieChart width={550} height={400} className='area'>
-      <Pie
-        activeIndex={activeIndex}
-        activeShape={renderActiveShape}
-        data={data}
-        innerRadius={60}
-        outerRadius={80}
-        fill="#8884d8"
-        dataKey="value"
-        onMouseEnter={onPieEnter}
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={entry.fill} />
-        ))}
-      </Pie>
-      <Tooltip />
-      <Legend />
-      <text x={280} y={195} fontWeight={600} fontSize= '2rem' textAnchor="middle" dominantBaseline="middle" className="central-label">
-        {centralLabel}
-      </text>
-    </PieChart>
+    <div className="pie-chart-container">
+      <ResponsiveContainer width="100%" height={300}>
+        <PieChart>
+          <Pie
+            activeIndex={activeIndex}
+            activeShape={renderActiveShape}
+            data={data}
+            innerRadius={50}
+            outerRadius={70}
+            fill="#8884d8"
+            dataKey="value"
+            onMouseEnter={onPieEnter}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.fill} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend />
+          <text x="50%" y="50%" fontWeight={600} fontSize="2rem" textAnchor="middle" dominantBaseline="middle" className="central-label">
+            {centralLabel}
+          </text>
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
   );
 };

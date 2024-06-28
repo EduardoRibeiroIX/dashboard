@@ -1,20 +1,42 @@
-
 .conteudo {
-    padding: 100px 0;
-    background-color: #fefefe;
-    box-shadow: 1px 1px 20px 1px rgb(125, 125, 125, 0.2);
-}
-
-.line {
     display: flex;
-    justify-content: center;
-}
-.line .graph {
-    width: 80vw;
-}
-
-.titulo {
-    font-size: 2rem;
-    font-weight: 700;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
     text-align: center;
-}
+  }
+  
+  .line {
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .graph {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .titulo {
+      font-size: 20px;
+    }
+  
+    .graph {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .titulo {
+      font-size: 18px;
+    }
+  
+    .graph {
+      height: 200px;
+    }
+  }
+  

@@ -1,5 +1,6 @@
+/* CampaignStatistics.css */
 .radial-graph {
-    padding: 100px 0;
+    padding: 50px 10px;
     background-color: #fff;
     text-align: center;
     box-shadow: 1px 1px 20px 1px rgba(102, 102, 102, 0.2);
@@ -9,13 +10,17 @@
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 1px 1px 8px 1px rgb(125, 125, 125, 0.2);
+    margin: 10px;
+    flex: 1;
+    min-width: 0;
+    height: 40vw;
 }
 
 .area-graph h3 {
     margin: 0;
     padding: 0;
     font-weight: 800;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 1.5rem;
 }
 
@@ -24,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .radial-graph .titulo {
@@ -33,12 +39,38 @@
 
 .radial-graph .card {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 10px;
-}
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+    gap: 10px;
+}   
 
 @media (max-width: 900px) {
+    .area-graph {
+        height: 60vw;
+    }
+
+
     .radial-graph .card {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2,  1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .titulo {
+        font-size: 20px;
+    }
+    
+    .radial-graph {
+        padding: 30px 10px;
+    }
+    
+    .radial-graph .card {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    
+    .area-graph {
+        height: 100vw;
+        margin-bottom: 20px;
     }
 }
